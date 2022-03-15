@@ -205,7 +205,7 @@ function AppContainer(props) {
 		console.log('[USER LOGGED IN]', props.isLoggedIn);
 
 		getAppMetricaProfileIDFromLocalStorage().then(profileId => {
-			AppMetrica.setUserProfileID(profileId);
+			// AppMetrica.setUserProfileID(profileId);
 		}).catch((error) => console.warn("fetch error:", error))
 
 		// Пробуем получить userData из стоража
