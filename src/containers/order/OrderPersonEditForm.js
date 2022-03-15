@@ -62,7 +62,7 @@ const OrderPersonEditForm = ({ route }) => {
 			<Spinner visible={loading} />
 
 			<View style={styles.radioList}>
-				{specialists.map((specialist, key) => {
+				{JSON.parse(specialists).map((specialist, key) => {
 					const personName = `${specialist.last_name} ${specialist.first_name} ${specialist.middle_name}`
 					const personID = specialist.id_1c
 
@@ -82,7 +82,7 @@ const OrderPersonEditForm = ({ route }) => {
 								</TouchableOpacity>
 							}
 
-							{specialists.length !== key + 1 ? <View style={styles.radioDivider} /> : null}
+							{JSON.parse(specialists).length !== key + 1 ? <View style={styles.radioDivider} /> : null}
 						</View>
 					)
 				})}

@@ -88,7 +88,7 @@ const OrderDetailScreen = ({ navigation, route }) => {
 
 				// Нормализуем объекты для пикера
 				const personsPicker = []
-				order.specialists.forEach(item => {
+				JSON.parse(order.specialists).forEach(item => {
 					personsPicker.push({
 						label: `${item.last_name} ${item.first_name} ${item.middle_name}`,
 						value: item.id_1c
@@ -247,7 +247,7 @@ const OrderDetailScreen = ({ navigation, route }) => {
 
 					{/* История изменения заявки */}
 					<View style={[styles.orderControllerTile, { marginBottom: 15 }]}>
-						{order.events.map((item, key) => {
+						{JSON.parse(order.events).map((item, key) => {
 							return (
 								<OrderEventListItem navigation={navigation} item={item} key={key} />
 							)
